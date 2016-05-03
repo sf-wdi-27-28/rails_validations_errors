@@ -1,3 +1,8 @@
 <h1>Show Pet</h1>
 <hr>
-<p><strong>Name:</strong> <%= @pet.name %></p>
+<p><strong>Name: <%= @pet.name %></strong> - <%= @pet.breed %> - <%= @pet.age %> years old</p>
+<hr>
+<button class="btn btn-primary"><%= link_to "Back", owner_pets_path(@owner,@pet) %></button>
+<button class="btn btn-primary"><%= link_to "Owner", owner_path(@owner) %></button>
+<button class="btn btn-warning"><%= link_to "Edit", edit_owner_pet_path(@owner,@pet) %></button>
+<button class="btn btn-danger"><%= link_to "Delete", owner_pet_path(@owner,@pet),method: :delete %></button>
