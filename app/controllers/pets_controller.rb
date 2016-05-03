@@ -1,6 +1,12 @@
 class PetsController < ApplicationController
 
   def index
+     @owners = Owner.all
+  #  @pets = Pet.all
+  # owner_id = params[:owner_id]
+  # @owner = Owner.find_by_id(owner_id)
+  # @pets = @owner.pets
+  #render :index
   end
 
   def new
@@ -10,6 +16,7 @@ class PetsController < ApplicationController
   end
 
   def show
+
   end
 
 

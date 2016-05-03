@@ -7,3 +7,8 @@ Rails.application.routes.draw do
   end
 
 end
+
+# config/routes.rb
+  # resources :owners do
+  #   resources :pets, only: :index
+  # end
