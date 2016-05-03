@@ -11,6 +11,10 @@ class PetsController < ApplicationController
   end
 
   def new
+    @pet = Pet.new
+   owner_id = params[:owner_id]
+   @owner = Owner.find_by(id: owner_id)
+
   end
 
   def create
@@ -21,9 +25,9 @@ class PetsController < ApplicationController
 
     @pet = Pet.find_by(id: pet_id)
 
-    # owner_id = parqams[:owner_id]
-    #
-    # @owner = Owner.find_by(id: owner_id)
+    owner_id = params[:owner_id]
+
+    @owner = Owner.find_by(id: owner_id)
   end
 
 
