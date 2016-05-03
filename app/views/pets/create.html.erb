@@ -1,2 +1,8 @@
-<h1>Pets#create</h1>
+<h1>Create new pet</h1>
 <p>Find me in app/views/pets/create.html.erb</p>
+<hr>
+<% form_for @owner do |f| %>
+<%= f.text_field :name, placeholder: "Pets name", class: "form-control" %>
+<%= f.text_field :breed, placeholder: "Pet breed/type", class: "form-control" %>
+<%= f.submit "Save", class: "btn btn-success" %>
+<% end %>
