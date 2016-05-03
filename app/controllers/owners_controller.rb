@@ -31,18 +31,18 @@ class OwnersController < ApplicationController
   def update
     # stretch
     if @owner.update(owner_params)
-      flash[:notice] = "New owner Edited"
+      flash[:notice] = "Owner Edited"
       redirect_to owner_path(@owner)
     else
       flash[:error] = @owner.errors.full_messages.join(", ")
-      redirect_to edit_owner_path
+      redirect_to edit_owner_path(@owner)
     end
   end
 
   def destroy
     # stretch
     if @owner.destroy
-      flash[:notice] = "New owner Edited"
+      flash[:notice] = "Owner Removed"
       redirect_to owners_path
     else
       flash[:error] = @owner.errors.full_messages.join(", ")

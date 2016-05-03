@@ -39,7 +39,7 @@ end
   pet_data = {
     name: FFaker::Name.first_name,
     breed: random_pet_breed,
-    # date_of_birth: random_recent_date(3.0, 2000.0)
+    date_of_birth: random_recent_date(3.0, 2000.0)
   }
   pet = Pet.create(pet_data)
   owners.sample.pets << pet
