@@ -12,10 +12,10 @@ class Owner < ActiveRecord::Base
             presence:   true,
             length:   { maximum: 255 }
 
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email,
             presence:   true,
-            format:     { with: VALID_EMAIL_REGEX },
+            format:     { with: EMAIL_REGEX },
             uniqueness: true,
             length:     { maximum: 255 }
 
