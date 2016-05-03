@@ -19,11 +19,11 @@ class Owner < ActiveRecord::Base
             uniqueness: true,
             length:     { maximum: 255 }
 
-  # def normalize_phone_number
-  #   if phone.present?
-  #     phone.gsub!(/^1/, "")
-  #     phone.gsub!(/[()-.]/,"")
-  #   end
-  # end
+  def normalize_phone_number
+    if phone.present?
+      phone.gsub!(/^1/, "")
+      phone.gsub!(/[()-.]/,"")
+    end
+  end
 
 end
