@@ -1,2 +1,7 @@
 <h2>pet _form partial</h2>
 <p>Find me in app/views/pets/_form.html.erb</p>
+<% form_for @owner do |f| %>
+<%= f.text_field :name, placeholder: "Pets name", class: "form-control" %>
+<%= f.text_field :breed, placeholder: "Pet breed/type", class: "form-control" %>
+<%= f.submit "Save", class: "btn btn-success" %>
+<% end %>
