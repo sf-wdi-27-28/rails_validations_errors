@@ -3,9 +3,9 @@ class PetsController < ApplicationController
   def index
     # binding.pry
     owner_id = params[:owner_id]
-    pet_id = params[:id]
+    # pet_id = params[:id]
     @owner = Owner.find_by_id(owner_id)
-    @pet = Pet.find_by_id(pet_id)
+    # @pet = Pet.find_by_id(pet_id)
     @pets = @owner.pets
   end
 
@@ -16,8 +16,9 @@ class PetsController < ApplicationController
   end
 
   def show
+    pet_id = params[:id]
+    @pet = Pet.find_by_id(pet_id)
   end
-
 
   private
   def pet_params

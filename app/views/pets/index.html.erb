@@ -3,5 +3,8 @@
 <hr>
 
 <% @pets.each do |p| %>
-<p><strong>Name:</strong> <%= p.name %></p>
+  <p>
+    <strong>Name:</strong> <%= p.name %>
+  </p>
+  <%= link_to "Click Here for more", owner_pet_path("#{@owner.id}","#{p.id}"), class: "btn btn-info" %>
 <% end %>
