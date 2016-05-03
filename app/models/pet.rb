@@ -1,4 +1,5 @@
 class Pet < ActiveRecord::Base
+  belongs_to :owner
   # TODO: associate with owner
 
   # TODO: validate name and breed
