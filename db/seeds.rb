@@ -23,7 +23,6 @@ end
 
 owners = Owner.create(owners_data)
 
-Pets
 
 def random_pet_breed
   ["dog", "cat", "reptile", "rabbit", "rodent", "rock", "amphibian", "giant robot", "fish"].sample
