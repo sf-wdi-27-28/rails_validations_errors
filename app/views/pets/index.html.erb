@@ -5,8 +5,9 @@
     <%= link_to pet.name, owner_pet_path(@owner, pet)%>
     <li><strong><%= pet.breed %></strong></li>
   </ul>
-  <hr>
-  <%= link_to "Add new pet", new_owner_pet_path(@owner), class: "btn btn-info"%>
+  
+
 <% end %>
 <hr>
 <%= link_to "Home page", owners_path(@owner), class: "btn btn-info"%>
+<%= link_to "Add new pet", new_owner_pet_path(@owner), class: "btn btn-info"%>
