@@ -1,5 +1,5 @@
 class OwnersController < ApplicationController
-
+before_action
   def index
     @owners = Owner.all
   end
@@ -10,7 +10,12 @@ class OwnersController < ApplicationController
 
   def create
     owner = Owner.create(owner_params)
-    redirect_to owner_path(owner)
+    if owner.save
+      redirect_to owner_path(owner)
+    else
+      flash[:error] = owner.errors.full_message.join(", ")
+      redirect_to new_owner_path
+    end
   end
 
   def show
@@ -19,15 +24,26 @@ class OwnersController < ApplicationController
   end
 
   def edit
-    # stretch
+    owner_id = params[:id]
+    @owner = Owner.find_by(id: owner_id)
   end
 
   def update
-    # stretch
+    owner_id = params[:id]
+    owner = Owner.find_by(id: owner_id)
+    if owner.update(owner_params)
+      redirect_to owner_path(owner)
+    else
+      flash[:error] = owner.errors.full_messages.join(", ")
+      redirect_to edit_owner_path(owner)
+    end
   end
 
   def destroy
-    # stretch
+    owner_id = params[:id]
+    owner = Owner.find_by(id: owner_id)
+    owner.destroy
+    redirect_to owners_path
   end
 
 

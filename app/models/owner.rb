@@ -1,5 +1,6 @@
 class Owner < ActiveRecord::Base
-  # TODO: add validations
+  validates :first_name, :last_name, :email, length:{maximum:255}, presence:true
+  validates :email, format: {with: /@/, message: "valid email sucka"}, uniqueness:true
 
   before_save :normalize_phone_number
 
