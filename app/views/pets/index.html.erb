@@ -6,4 +6,5 @@
   <%= link_to "Show pet", owner_pet_path("#{@owner.id}","#{pet.id}"), class: "btn btn-info" %>
 <% end %>
 <%= link_to "add a pet", new_owner_pet_path(@owner), class: "btn btn-info" %>
+<%= link_to "Back to Owner's Profile", owner_path(@owner), class: "btn btn-info" %>
 <!-- "/owners/#{@owner.id}/pets/#{pet.id}" -->

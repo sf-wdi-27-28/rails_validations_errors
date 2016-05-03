@@ -1,8 +1,9 @@
 <h1>Show Pet</h1>
 <hr>
 
-  <p><%= @pet.name %></p>
-  <p><%= @pet.id %></p>
-  <p><%= @pet.breed %></p>
-  <p>Owned by <%= @pet.owner.first_name %></p>
-  <%= link_to "home", owners_path, class: "btn btn-info" %>
+<p><%= @pet.name %></p>
+<p><%= @pet.id %></p>
+<p><%= @pet.breed %></p>
+<p>Owned by <%= @pet.owner.first_name %></p>
+
+<%= link_to "Owners Pets Link", owner_pets_path(@pet.owner_id), class: "btn btn-info" %>
