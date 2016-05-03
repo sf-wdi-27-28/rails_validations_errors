@@ -1,11 +1,29 @@
+
 class Owner < ActiveRecord::Base
-  # TODO: add validations
+  has_many :pets, dependent: :destroy
 
   before_save :normalize_phone_number
 
-  # removes leading 1 and the characters (, ), -, .
+  validates :first_name,
+            presence:   true,
+            length:   { maximum: 255 }
+
+  validates :last_name,
+            presence:   true,
+            length:   { maximum: 255 }
+
+  EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email,
+            presence:   true,
+            format:     { with: EMAIL_REGEX },
+            uniqueness: true,
+            length:     { maximum: 255 }
+
   def normalize_phone_number
-    # stretch
+    if phone.present?
+      phone.gsub!(/^1/, "")
+      phone.gsub!(/[()-.]/,"")
+    end
   end
 
 end
