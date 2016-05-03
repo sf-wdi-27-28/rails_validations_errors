@@ -2,11 +2,9 @@ class Pet < ActiveRecord::Base
 
   belongs_to :owner
   # validate name and breed
-  validates :name, :breed, {
-    presence: true,
-    uniqueness: true,
-    length: { maximum:255 }
-  }
+  validates :name, presence: true, length: { maximum: 255 }
+
+  validates :breed, presence: true
 
   validate :date_of_birth_cannot_be_in_the_future
 
