@@ -1,2 +1,12 @@
-<h1>All Pets for <%= @owner.email %></h1>
+<h1>All Pets for <%= @owner.first_name %></h1>
 <hr>
+<br>
+<%= link_to "add a pet", new_owner_pet_path(@owner), class: "btn btn-info btn-lg" %>
+<%= link_to "Back to Owner's Profile", owner_path(@owner), class: "btn btn-info btn-lg" %>
+<br>
+<br>
+<% @pets.each do |pet| %>
+  <p><%= pet.name %></p>
+  <p><%= link_to "Show pet", owner_pet_path("#{@owner.id}","#{pet.id}"), class: "btn btn-info" %></p><br><br>
+<% end %>
+<!-- "/owners/#{@owner.id}/pets/#{pet.id}" -->
