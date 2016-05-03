@@ -9,9 +9,21 @@ class PetsController < ApplicationController
   end
 
   def new
+    @pet = Pet.new
+    owner_id = params[:owner_id]
+    @owner = Owner.find_by(id: owner_id)
   end
 
   def create
+    owner = Owner.find(params[:owner_id])
+    new_pet = Pet.new(pet_params)
+    if new_pet.save
+      owner.pets << new_pet
+      redirect_to owner_pet_path(owner, new_pet)
+    else
+      flash[:error] = new_pet.errors.full_messages.join(", ")
+      redirect_to new_owner_pet_path(owner)
+    end
   end
 
   def show
