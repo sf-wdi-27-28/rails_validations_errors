@@ -1,2 +1,6 @@
-<h1>All Pets for <%= @owner.email %></h1>
+<h1>All Pets for <%= @owner.first_name %></h1>
 <hr>
+
+<% @pets.each do |pet| %>
+  <%= pet.name %>
+<% end %>
