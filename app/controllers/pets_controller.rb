@@ -10,9 +10,21 @@ class PetsController < ApplicationController
   end
 
   def new
+    @pet = Pet.new
+    owner_id = params[:owner_id]
+    @owner = Owner.find_by(id: owner_id)
   end
 
   def create
+    owner = Owner.find(params[:owner_id])
+    pet = Pet.new(pet_params)
+
+    if pet.save
+      owner.pets << pet
+      redirect_to owner_pet_path(owner, pet)
+    else
+      redirect_to new_owner_pet_path(owner)
+    end
   end
 
   def show

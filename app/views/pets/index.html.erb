@@ -7,4 +7,5 @@
     <strong>Name:</strong> <%= p.name %>
   </p>
   <%= link_to "Click Here for more", owner_pet_path("#{@owner.id}","#{p.id}"), class: "btn btn-info" %>
+  <%= link_to "New Pet", new_owner_pet_path, class: "btn btn-default" %>
 <% end %>
