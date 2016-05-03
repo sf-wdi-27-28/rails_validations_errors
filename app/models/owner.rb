@@ -1,4 +1,5 @@
 class Owner < ActiveRecord::Base
+  has_many :pets
   # TODO: add validations
   validates :first_name, presence: true, length: { maximum: 255 }
   validates :last_name, presence: true, length: { maximum: 255 }
