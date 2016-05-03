@@ -3,3 +3,8 @@
 <p><strong>Name:</strong> <%= @owner.first_name %> <%= @owner.last_name %></p>
 <p><strong>Email:</strong> <%= @owner.email %></p>
 <p><strong>Phone Number:</strong> <%= @owner.phone %></p>
+
+<%= link_to "Edit Owner", edit_owner_path, class: "btn btn-default" %>
+<%= link_to "Delete Owner", @owner, method: "delete", class: "btn btn-danger" %>
+<%= link_to "Back", owners_path, class: "btn btn-primary" %>
+<%= link_to "View this owner's pet", owner_pets_path(@owner), class: "btn btn-info" %>
