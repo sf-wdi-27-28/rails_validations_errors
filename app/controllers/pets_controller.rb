@@ -21,9 +21,9 @@ class PetsController < ApplicationController
 
     @pet = Pet.find_by(id: pet_id)
 
-    owner_id = parqams[:owner_id]
-
-    @owner = Owner.find_by(id: owner_id)
+    # owner_id = parqams[:owner_id]
+    #
+    # @owner = Owner.find_by(id: owner_id)
   end
 
 
