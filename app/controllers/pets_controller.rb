@@ -1,6 +1,7 @@
 class PetsController < ApplicationController
 
   def index
+    @owner = Owner.find_by_id(params[:id])
   end
 
   def new
@@ -10,6 +11,8 @@ class PetsController < ApplicationController
   end
 
   def show
+    @pet = Pet.find_by_id(params[:id])
+    @owner = Owner.find_by_id(params[:id])
   end
 
 
