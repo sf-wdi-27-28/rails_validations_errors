@@ -1,7 +1,15 @@
 class Pet < ActiveRecord::Base
+
+  belongs_to :owner
+
   # TODO: associate with owner
+  validates :name,
+    presence: true,
+    length: { maximum: 255 }
 
   # TODO: validate name and breed
+  validates :breed,
+    presence: true
 
   validate :date_of_birth_cannot_be_in_the_future
 
