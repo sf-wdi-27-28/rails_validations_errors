@@ -16,6 +16,11 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
+        <font color="red">
+          <% flash.each do |name, msg| %>
+            <div><strong><%= msg %></strong></div>
+          <% end %>
+        </font>
         <%= yield %>
       </div>
     </div>
