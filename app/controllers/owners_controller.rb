@@ -9,8 +9,14 @@ class OwnersController < ApplicationController
   end
 
   def create
-    owner = Owner.create(owner_params)
+    owner = Owner.new (owner_params)
+  if owner.save
+    flash[:notice] = "save successful!"
     redirect_to owner_path(owner)
+  else
+    flash[:error] = owner.errors.full_messages.join(", ")
+    redirect_to new_owner_path
+  end
   end
 
   def show
