@@ -3,4 +3,7 @@
 
 <% @pets.each do |pet| %>
   <%= pet.name %>
+  <%= link_to "Show pet", owner_pet_path("#{@owner.id}","#{pet.id}"), class: "btn btn-info" %>
 <% end %>
+
+<!-- "/owners/#{@owner.id}/pets/#{pet.id}" -->

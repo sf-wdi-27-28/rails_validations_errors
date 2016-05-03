@@ -15,6 +15,10 @@ class PetsController < ApplicationController
   end
 
   def show
+    # binding.pry
+    pet_id = params[:id]
+    @pet = Pet.find_by_id(pet_id)
+    render :show
   end
 
 
