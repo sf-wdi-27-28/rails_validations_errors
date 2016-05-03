@@ -1,3 +1,6 @@
 <h1>New Owner</h1>
+<% flash.each do |name, msg| %>
+<%= msg %>
+<% end %>
 <hr>
 <%= render "form" %>
