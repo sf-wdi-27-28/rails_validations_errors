@@ -3,3 +3,7 @@
 <p><strong>Name:</strong> <%= @owner.first_name %> <%= @owner.last_name %></p>
 <p><strong>Email:</strong> <%= @owner.email %></p>
 <p><strong>Phone Number:</strong> <%= @owner.phone %></p>
+<hr>
+<button class="btn btn-primary"><%= link_to "Back", owners_path %></button>
+<button class="btn btn-warning"><%= link_to "Edit", edit_owner_path(@owner) %></button>
+<button class="btn btn-danger"><%= link_to "Delete", owner_path(@owner),method: :delete %></button>
